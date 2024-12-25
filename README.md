@@ -28,7 +28,7 @@ os.environ['PATH'] = f"{os.environ['PATH']}:/home/[USERNAME]/mambaforge/envs/py3
 
 ---
 
-### Project Details
+## Project Details
 
 #### Key Features
 
@@ -56,7 +56,7 @@ Report/scores_logs.txt
 
 ---
 
-### Training Progress
+## Training Progress
 
 Below are the training results from the episode 100 to 1200. The agent achive highest score of 1.5 in these trainings :
 
@@ -79,7 +79,7 @@ Episode 1200: 0.20000000298023224
 
 ---
 
-### Code Overview
+## Code Overview
 
 Here is an overview of the main components:
 
@@ -121,7 +121,7 @@ Here is an overview of the main components:
   OUNoise.py
   ```
 
-### Run Pretrained Model
+## Run Pretrained Model
 
 1. open with Jupyter Notebook
 
