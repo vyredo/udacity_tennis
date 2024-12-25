@@ -37,7 +37,7 @@ os.environ['PATH'] = f"{os.environ['PATH']}:/home/[USERNAME]/mambaforge/envs/py3
 - Training is done several times to allow me to debug each training, the first training is done in 1250 episodes, this the plot for first 1250 episodes
   <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores_plot_prev_1250.png" />
 - The second training's plot
-  <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores.png" />
+  <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores_plot.png" />
 
 - Pretrained Model: The trained model is saved at:
 
