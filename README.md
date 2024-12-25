@@ -1,6 +1,6 @@
-# Banana Navigation - Reinforcement Learning Project
+# Tennis - Reinforcement Learning Project
 
-This repository contains the solution to the Udacity Nanodegree project for the Reacher Navigation environment. The agent is trained using a DDPGAgent (Dueling DQN) with Replay Buffer, The example provide is for linux OS, you will need to include another file for another OS, do include the 20 agents version.
+This repository contains the solution to the Udacity Nanodegree project for the Tennis Navigation environment. The agent is trained using a MADDPGAgent (Multi Agent Deep Deterministic Policy Gradient ) with Replay Buffer, The example provide is for linux OS, you will need to include another file for another OS.
 
 ---
 
@@ -32,35 +32,46 @@ os.environ['PATH'] = f"{os.environ['PATH']}:/home/[USERNAME]/mambaforge/envs/py3
 
 #### Key Features
 
-- Algorithm: DDPG Agent with Replay Buffer for efficient learning.
+- Algorithm: MADDPG Agent with Replay Buffer for efficient learning.
+
+- Training is done several times to allow me to debug each training, the first training is done in 1250 episodes, the plot can be seen in (here)[]
+
 - Pretrained Model: The trained model is saved at:
 
 ```bash
-Report/actor.pth
-Report/critic.pth
+Report/agent1_actor.pth
+Report/agent1_critic.pth
+Report/agent2_actor.pth
+Report/agent2_critic.pth
 ```
 
 - Logs: Training logs are available at:
 
 ```bash
-Report/training_logs.txt
+Report/scores_logs.txt
 ```
 
 ---
 
 ### Training Progress
 
-Below are the training results from the episode 195 to 202. The agent achive average 30 scores in these trainings :
+Below are the training results from the episode 100 to 1200. The agent achive highest score of 1.5 in these trainings :
 
 ```mathematica
-Episode: 195 average last 100 Score: 31.89, done in 318.66 seconds
-Episode: 196 average last 100 Score: 33.97, done in 322.65 seconds
-Episode: 197 average last 100 Score: 33.46, done in 326.14 seconds
-Episode: 198 average last 100 Score: 31.19, done in 329.9 seconds
-Episode: 199 average last 100 Score: 32.21, done in 337.84 seconds
-Episode: 200 average last 100 Score: 33.25, done in 339.39 seconds
-Episode: 201 average last 100 Score: 32.82, done in 342.36 seconds
-Episode: 202 average last 100 Score: 32.56, done in 346.29 seconds
+
+Episode 100: 0.0
+Episode 200: 0.0
+Episode 300: 0.0
+Episode 400: 0.10000000149011612
+Episode 500: 0.0
+Episode 600: 1.1000000163912773
+Episode 700: 0.20000000298023224
+Episode 800: 0.0
+Episode 900: 1.5000000223517418
+Episode 1000: 0.0
+Episode 1100: 0.10000000149011612
+Episode 1200: 0.20000000298023224
+
 ```
 
 ---
@@ -69,8 +80,13 @@ Episode: 202 average last 100 Score: 32.56, done in 346.29 seconds
 
 Here is an overview of the main components:
 
+- **MADDPG (Multi-Agent Deep Deterministic Policy Gradient)**:
+
+  - Tennis environments has 2 agents. Each agents has it's own actor and critic network
+  - Evaluation of critics is centralized during training because the critic uses the global state and actions of both agents to optimize policies. However, during execution, each agent operates independently based on its policy
+
 - **Actor-Critic-Network**:
-  The Actor-Critic Network is a key component of the agent's design. It consists of two networks:
+  The Tennis environment has 2 agents. Each agent has its own actor and critic networks:
 
   - Actor Network: Responsible for selecting actions based on the current state.
   - Critic Network: Evaluates the quality of the state-action pair.
@@ -90,23 +106,13 @@ Here is an overview of the main components:
 - **Replay Memory**:
   Code for Replay Buffer is in:
 
-  ````bash
-  ReplayBuffer.py
-  ```
-  ````
-
-- **Prioritized Experience Replay**:
-  I tried to use PER but the agent does not learn when PER is active and each episode takes much longer time in my system.
-  The current report does not use PER, only Replay Buffer
-  Code for PER is in:
-
   ```bash
-  PrioritizeReplay.py
+  ReplayBuffer.py
   ```
 
 - **Ornstein-Uhlenbeck Noise (OU Noise)**:
-  To encourage exploration in continuous action environment, the agent uses OUNoise
-  Code for Replay Buffer is in:
+  To encourage exploration in continuous action environment, the agent uses OUNoise  
+  Code for OUNoise is in:
 
   ```bash
   OUNoise.py
@@ -120,6 +126,6 @@ Here is an overview of the main components:
 Run_Pretrained.ipynb
 ```
 
-2. Replace the file `Reacher.x86_64` according to your OS. The example provided is for Linux
+2. Replace the file `Tennis.x86_64` according to your OS. The example provided is for Linux
 
 3. Run all
