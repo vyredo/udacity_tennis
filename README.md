@@ -77,7 +77,7 @@ Report/scores_logs.txt
 
 ## Training Progress
 
-Overall the training is done in around 10_000 episodes.
+Overall the training is done in around 6600 episodes.
 
 Below are the training results from the episode 100 to 1200. The agent achive highest score of 1.5 in these trainings :
 
