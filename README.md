@@ -6,6 +6,10 @@ This repository contains the solution to the Udacity Nanodegree project for the 
 
 ## Report
 
+Below is the youtube video of running pretrained model (click to open in youtube).
+<a href="https://www.youtube.com/watch?v=t0eosGVAAhs">
+<img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/screenshot.jpg"/>
+</a>
 Check this [link to view Report section](https://github.com/vyredo/udacity_tennis/blob/main/Report/Report.md)
 
 ## Getting Started

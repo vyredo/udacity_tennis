@@ -4,7 +4,7 @@
 
 Below is the youtube video of running pretrained model (click to open in youtube).
 <a href="https://www.youtube.com/watch?v=t0eosGVAAhs">
-<img src=""/>
+<img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/screenshot.jpg"/>
 </a>
 
 - You can open file `Run_Pretrained.ipynb` to run it.
