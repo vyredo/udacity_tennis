@@ -1,6 +1,6 @@
 # Tennis - Reinforcement Learning Project
 
-This repository contains the solution to the Udacity Nanodegree project for the Tennis Navigation environment. The agent is trained using a MADDPGAgent (Multi Agent Deep Deterministic Policy Gradient ) with Replay Buffer, The example provide is for linux OS, you will need to include another file for another OS.
+This repository contains the solution to the Udacity Nanodegree project for the Tennis Navigation environment. The agent is trained using a MADDPG (Multi Agent Deep Deterministic Policy Gradient ) with Replay Buffer, The example provide is for linux OS, you will need to include another file for another OS.
 
 ---
 
@@ -30,13 +30,32 @@ os.environ['PATH'] = f"{os.environ['PATH']}:/home/[USERNAME]/mambaforge/envs/py3
 
 ## Project Details
 
-#### Key Features
+### Environment Overview
+
+In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
+
+The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
+
+The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
+
+After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
+This yields a single score for each episode.
+The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
+
+### Solution
+
+This environment has a continuous action space, making it suitable for algorithms like DDPG. Since there are two agents interacting, a multi-agent version of DDPG (MADDPG) is used.
+
+The algorithm is trained in large number of episodes by using NVIDIA RTX 4060Ti
+
+### Key Features
 
 - Algorithm: MADDPG Agent with Replay Buffer for efficient learning.
 
-- Training is done several times to allow me to debug each training, the first training is done in 1250 episodes, this the plot for first 1250 episodes
+- Training is done iteratively to debug each session. The first training session ran for 1250 episodes. The plot for this session
   <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores_plot_prev_1250.png" />
-- The second training's plot
+
+- Similarly, for the second training session: The second training session ran for 10,000 episodes. The plot for this session
   <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores_plot.png" />
 
 - Pretrained Model: The trained model is saved at:
@@ -57,6 +76,8 @@ Report/scores_logs.txt
 ---
 
 ## Training Progress
+
+Overall the training is done in around 10_000 episodes.
 
 Below are the training results from the episode 100 to 1200. The agent achive highest score of 1.5 in these trainings :
 
