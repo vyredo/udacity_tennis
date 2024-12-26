@@ -42,7 +42,7 @@ The observation space consists of 8 variables corresponding to the position and 
 
 The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
 
-After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
+After each episode, I add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. I then take the maximum of these 2 scores.
 This yields a single score for each episode.
 The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
 
@@ -59,7 +59,7 @@ The algorithm is trained in large number of episodes by using NVIDIA RTX 4060Ti
 - Training is done iteratively to debug each session. The first training session ran for 1250 episodes. The plot for this session
   <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores_plot_prev_1250.png" />
 
-- Similarly, for the second training session: The second training session ran for 10,000 episodes. The plot for this session
+- Similarly, for the second training session: The second training session ran for 6000 episodes. The plot for this session
   <img src="https://github.com/vyredo/udacity_tennis/blob/main/Report/scores_plot.png" />
 
 - Pretrained Model: The trained model is saved at:
